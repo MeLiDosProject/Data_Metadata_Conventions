@@ -47,7 +47,7 @@ $ProjectID/
         questionnaires/
 ```
 
--   Please split the files in continuous further according to the folder conventions. Importantly, this gives a subfolder for each wearing position of an actlumus device.
+-   Please split the files according to the folder conventions. Importantly, this gives a subfolder for each wearing position of an actlumus device.
 
 -   Data in a single file per participant should be in the folder "individual "and not appear a second time in „group"
 
