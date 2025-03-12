@@ -1,4 +1,4 @@
-<img src="images/logo_with_text-01.png" width="250">)
+<img src="images/logo_with_text-01.png" width="250">
 
 ![](images/logo_banner.png)
 
