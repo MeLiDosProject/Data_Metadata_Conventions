@@ -80,11 +80,11 @@ $ProjectID/
     
     -  **The lookup table must be in the same folder as the data file it references**
     
-    -  An example can be found under [lookup/example_lookup.csv](lookup/example_lookup.csv)
+    -  An example can be found under [lookup/example_lookup.csv](https://raw.githubusercontent.com/MeLiDosProject/Data_Metadata_Conventions/main/lookup/example_lookup.csv)
 
 ## Metadata conventions
 
-Partners initially only have to provide very little metadata. This metadata has to be provided in a file called `Metadata_Melidos_$partner.xlsx`. An empty example can be found under [metadata/Metadata_Melidos_partners.xlsx](metadata/Metadata_Melidos_partners.xlsx).
+Partners initially only have to provide very little metadata. This metadata has to be provided in a file called `Metadata_Melidos_$partner.xlsx`. An empty example can be found under [metadata/Metadata_Melidos_partners.xlsx](https://raw.githubusercontent.com/MeLiDosProject/Data_Metadata_Conventions/main/metadata/Metadata_Melidos_partners.xlsx).
 
 ### Study_level:
 
