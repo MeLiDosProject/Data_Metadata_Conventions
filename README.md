@@ -25,6 +25,7 @@ $ProjectID/
                screening/
             individual/
                $ParticipantID/
+                     chronotype/
                      continuous/
                          actlumus_wrist
                          actlumus_head
@@ -52,6 +53,8 @@ $ProjectID/
 -   Data in a single file per participant should be in the folder "individual "and not appear a second time in „group"
 
 -   Data in one file for the whole group should be in the folder „group“ and not be split up into separate files for „individual“. See the next point.
+
+-   If you can export the data in either group form or individual form, please use "individual".
 
 -   Data in the group folder require a lookup table.
 
