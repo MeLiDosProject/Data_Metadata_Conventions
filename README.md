@@ -105,7 +105,7 @@ Partners initially only have to provide very little metadata. This metadata has 
 ### Dataset level:
 
 - use the IDs from participant level and device level to uniquely identify files. Please use one row per file
-- row 17 and following (Full file names) should only contain names of files containing timestamp data, such as ActLumus files, or wearlogs. Files that contain information about a participant in general (so no time stamp attached to a row, such as chronotype or demographic inf) will be ultimately part of the participant level metadata, not the dataset.
+- row 17 and following (Full file names) should only contain names of files containing timestamp data, such as ActLumus files, or wearlogs. Files that contain information about a participant in general (so no time stamp attached to a row, such as chronotype or demographic inf) will be ultimately part of the participant level metadata, not the dataset. All files that are in the `continuous/` folder as described in the [Folder structure](#folder-structure) should be listed. These files can have a one to many relationship, meaning that one questionnaire file should be listed under every dataset for that participant, i.e., be listed for every wearing position.
 - further, if a file contains information about more than one dataset - i.e., the questionnaires contained in the „continuous“ folder, as they refer to all three datasets of a participant (wrist, head, chest), that file should be listed in every dataset it belongs to.
 
 ## Participant naming conventions
