@@ -100,7 +100,7 @@ Partners initially only have to provide very little metadata. This metadata has 
 
 ### Device level:
 
-- please assign a unique Id to your device in the form of KNUST_AL01/FUSTPCEU_AL01, _AL02, _Al03, and so on.
+- please assign a unique Id to your device in the form of KNUST_AL01/FUSTPCEU_AL01, _AL02, _AL03, and so on.
 
 ### Dataset level:
 
