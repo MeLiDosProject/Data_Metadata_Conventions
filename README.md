@@ -85,7 +85,7 @@ $ProjectID/
     
     -  An example can be found under [lookup/example_lookup.csv](https://raw.githubusercontent.com/MeLiDosProject/Data_Metadata_Conventions/main/lookup/example_lookup.csv)
     
--   For files in the folder(s) `mHLEA_paper/`, follow [this example](https://github.com/MeLiDosProject/AkuffoEtAl_Dataset_2025/raw/refs/heads/main/data/raw/individual/KNUST_S001/continuous/mHLEA_paper/KNUST_S001_mHLEA_paper_20241014.xlsx) from KNUST.
+-   For files in the folder(s) `mHLEA_paper/`, follow [this example](https://github.com/MeLiDosProject/AkuffoEtAl_Dataset_2025/raw/refs/heads/main/data/raw/individual/KNUST_S001/continuous/mHLEA_paper/KNUST_S001_mHLEA_paper_20241014.xlsx) from KNUST. Take particular care to keep Datetime formats consistent within the files and across different files!
 
 ## Metadata conventions
 
