@@ -84,6 +84,8 @@ $ProjectID/
     -  **The lookup table must be in the same folder as the data file it references**
     
     -  An example can be found under [lookup/example_lookup.csv](https://raw.githubusercontent.com/MeLiDosProject/Data_Metadata_Conventions/main/lookup/example_lookup.csv)
+    
+-   For files in the folder(s) `mHLEA_paper/`, follow [this example](https://github.com/MeLiDosProject/AkuffoEtAl_Dataset_2025/raw/refs/heads/main/data/raw/individual/KNUST_S001/continuous/mHLEA_paper/KNUST_S001_mHLEA_paper_20241014.xlsx) from KNUST.
 
 ## Metadata conventions
 
@@ -100,7 +102,7 @@ Partners initially only have to provide very little metadata. This metadata has 
 
 ### Device level:
 
-- please assign a unique Id to your device in the form of KNUST_AL01/FUSTPCEU_AL01, _AL02, _AL03, and so on.
+- please assign a unique Id to your device in the form of KNUST_AL01/FUSPCEU_AL01, _AL02, _AL03, and so on.
 
 ### Dataset level:
 
