@@ -6,7 +6,7 @@
 
 This README summarizes conventions for data and metadata in the MeLiDos project field study (WP2).
 
-This document will be updated as needed. It was last updated on **12 March 2025**.
+This document will be updated as needed. It was last updated on **29 July 2025**.
 
 ## Folder structure
 
