@@ -135,3 +135,8 @@ Wearing positions are abbreviated in file names as follows:
 -   chest (necklace): **c**
 
 If you use full names, please do not use the names in brackets.
+
+
+## Study dates & times
+
+Recording periods from ActLumus devices will not map 1:1 onto the participant's study times, i.e., wear times. Usually, data has to be trimmed from the beginning and end. To facilitate analysis, all sites should provide an excel file containing pertinent information about when participants started and ended their wear-periods. A good example from the Izmir site in Turkey can be found under [metadata/Study_dates_MeLiDos_IZTECH.xlsx](https://raw.githubusercontent.com/MeLiDosProject/Data_Metadata_Conventions/main/metadata/Study_dates_MeLiDos_IZTECH.xlsx)
