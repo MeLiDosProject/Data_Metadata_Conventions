@@ -22,6 +22,7 @@ grand_overview <- function(dataset, #light exposure dataset
                            variable = MEDI, #column in dataset containing the plot value
                            Datetime.colname = Datetime, #column in dataset containing the datetime value
                            Id.colname = Id,  #column in dataset containing the Id
+                           ov_y.text.size = 8,
                            photoperiod_sequence = 0.5,
                            map_projection = "+proj=eqc",
                            map_site_label_color = "black",
@@ -62,7 +63,7 @@ grand_overview <- function(dataset, #light exposure dataset
       scale_color_manual(values = site_color) +
       guides(colour = "none") +
       labs(y = "ID") +
-      theme(axis.text.y = element_text(size = 8))
+      theme(axis.text.y = element_text(size = ov_y.text.size))
     
     if (panels == "overview")
       return(P_overview)
