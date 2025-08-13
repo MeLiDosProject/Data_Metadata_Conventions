@@ -43,6 +43,8 @@ grand_overview <- function(dataset, #light exposure dataset
   coordinates_string <- 
     paste(lat_string, lon_string, sep = ", ")
   
+  if (is.null(names(site_color)) || all(names(site_color) == "")) names(site_color) <- site
+  
   # overview ----------------------------------------------------------------
   
   if (panels %in% c("all", "overview")) {
@@ -262,9 +264,9 @@ grand_overview <- function(dataset, #light exposure dataset
         caption = glue(
           "<i>daytime</i>, <i>evening</i>, and <i>sleep</i> indicate 
           recommendations for healthy light exposure (Brown et al., 2022). 
-          <b>Median</b> with <b style = 'color:{alpha(country_colors['Turkey'], 
-          alpha = 0.9)}'>50%</b>, <b style = 'color:{alpha(country_colors['Turkey'], 
-          alpha = 0.7)}'>75%</b>, or <b style = 'color:{alpha(country_colors['Turkey'], 
+          <b>Median</b> with <b style = 'color:{alpha(site_color[site], 
+          alpha = 0.9)}'>50%</b>, <b style = 'color:{alpha(site_color[site], 
+          alpha = 0.7)}'>75%</b>, or <b style = 'color:{alpha(site_color[site], 
           alpha = 0.5)}'>95%</b> of data."
         )
       ) +
