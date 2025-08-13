@@ -48,7 +48,7 @@ grand_overview <- function(dataset, #light exposure dataset
     lvl <- dataset |>
       ungroup() |>
       summarise(avg = min({{ Datetime.colname }}, na.rm = TRUE), .by = {{ Id.colname }}) |>
-      arrange(desc({{ Id.colname}})) |>
+      arrange(desc(avg)) |>
       pull({{ Id.colname}})
     
     P_overview <-
@@ -61,7 +61,8 @@ grand_overview <- function(dataset, #light exposure dataset
       scale_x_datetime(date_labels = "%b %Y") +
       scale_color_manual(values = site_color) +
       guides(colour = "none") +
-      labs(y = "ID")
+      labs(y = "ID") +
+      theme(axis.text.y = element_text(size = 8))
     
     if (panels == "overview")
       return(P_overview)
@@ -190,7 +191,7 @@ grand_overview <- function(dataset, #light exposure dataset
                      alpha = 0.25, 
                      fill = "grey40",
                      data = tibble(photoperiod = limits)) +
-      geom_histogram(bins = 25, aes(fill = site)) +
+      geom_histogram(bins = 25, aes(fill = site), alpha = 0.85) +
       scale_x_continuous(breaks = photoperiods_seq) +
       scale_color_manual(values = site_color) +
       scale_fill_manual(values = site_color) +
