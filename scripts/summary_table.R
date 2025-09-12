@@ -21,7 +21,7 @@ light_summary_table <- function(
     Id.colname = Id,  #column in dataset containing the Participant Id
     threshold.missing = 0.2, #threshold for missing data
     Variable.label = "melanopic EDI (lx)", #label of the light variable
-    histograms = FALSE #display histograms
+    histograms = TRUE #display histograms
     ) {
 
 #number of participants
