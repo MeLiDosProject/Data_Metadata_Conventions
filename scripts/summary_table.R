@@ -269,10 +269,10 @@ labels_vec <- c(
   first_above250 = md("FLiT<sub>250</sub>"),
   mean_above250 = md("MLiT<sub>250</sub>"),
   last_above250 = md("LLiT<sub>250</sub>"),
-  bright10_mean = md("M10<sub>mean</sub> (lx)"),
   bright10_mid = md("M10<sub>midpoint</sub>"),
-  dark5_mean = md("L5<sub>mean</sub> (lx)"),
   dark5_mid = md("L5<sub>midpoint</sub>"),
+  bright10_mean = md("M10<sub>mean</sub> (lx)"),
+  dark5_mean = md("L5<sub>mean</sub> (lx)"),
   IS = md("IS"),
   IV = md("IV")
 )
