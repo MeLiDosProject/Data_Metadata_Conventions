@@ -27,7 +27,8 @@ grand_overview <- function(dataset, #light exposure dataset
                            map_projection = "+proj=eqc",
                            map_site_label_color = "black",
                            map_y_offset_label = 0.08,
-                           dp_y.axis.label = "Melanopic EDI (lx)"
+                           dp_y.axis.label = "Melanopic EDI (lx)",
+                           date.handler = stats::median                           
                            ) {
 
   panels <- match.arg(panels)
@@ -234,6 +235,7 @@ grand_overview <- function(dataset, #light exposure dataset
       aggregate_Date(
         unit = "15 mins",
         numeric.handler = \(x) median(x, na.rm = TRUE),
+        date.handler = date.handler,
         upper95 = quantile({{ variable }}, 0.975, na.rm = TRUE),
         upper75 = quantile({{ variable }}, 0.875, na.rm = TRUE),
         upper50 = quantile({{ variable }}, 0.75, na.rm = TRUE),
