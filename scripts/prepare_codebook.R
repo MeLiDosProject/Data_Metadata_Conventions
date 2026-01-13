@@ -1,0 +1,23 @@
+#base path is https://raw.githubusercontent.com/MeLiDosProject/Data_Metadata_Conventions/main/codebook/
+prepare_codebook <- function(codebook) {
+  require(glue)
+  path <- glue(
+    "https://raw.githubusercontent.com/MeLiDosProject/Data_Metadata_Conventions/main/codebook/",
+    codebook
+  )
+  strings_to_ignore <- 
+    "<div class=\"rich-text-field-label\">|<p>|<br />|<em>|</em>|</p>|</div>|<span style=\"font-weight: normal;\">We need this so that we can contact you with further details about participation in the study. Please provide an e-mail address that you regularly check.</span>"
+  codebook <- 
+    read_csv(
+      path
+    )
+  #clean up labels
+  codebook <-
+    codebook |> 
+    mutate(
+      `Field Label` = 
+        `Field Label` |> 
+        str_remove_all(strings_to_ignore)
+    )
+  codebook
+}
