@@ -1,5 +1,5 @@
 #base path is https://raw.githubusercontent.com/MeLiDosProject/Data_Metadata_Conventions/main/codebook/
-prepare_codebook <- function(codebook) {
+prepare_codebook <- function(codebook, form.filter = NULL) {
   require(glue)
   path <- glue(
     "https://raw.githubusercontent.com/MeLiDosProject/Data_Metadata_Conventions/main/codebook/",
@@ -11,6 +11,13 @@ prepare_codebook <- function(codebook) {
     read_csv(
       path
     )
+  
+  if(!is.null(form.filter)){
+    #filter relevant columns
+    codebook <- 
+      codebook |> filter(`Form Name` == form.filter)
+  }
+  
   #clean up labels
   codebook <-
     codebook |> 
