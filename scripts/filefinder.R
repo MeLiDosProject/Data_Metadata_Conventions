@@ -1,4 +1,9 @@
-filefinder <- function(aspect, individual = TRUE, continuous = FALSE, full.names = TRUE){
+filefinder <- function(aspect, 
+                       individual = TRUE, 
+                       continuous = FALSE, 
+                       full.names = TRUE,
+                       negate = NULL
+                       ){
 
   #path to questionnaire
   if(continuous) {
@@ -19,5 +24,10 @@ filefinder <- function(aspect, individual = TRUE, continuous = FALSE, full.names
       }
 
   #collecting file names
-  files <- list.files(paths, full.names = TRUE)
+  files <- list.files(paths, full.names = full.names)
+  
+  if(is.null(negate)) return(files)
+  
+  #optionally remove files
+  files <- files[str_detect(files, negate, negate = TRUE)]
 }
