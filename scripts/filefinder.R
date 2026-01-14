@@ -2,7 +2,8 @@ filefinder <- function(aspect,
                        individual = TRUE, 
                        continuous = FALSE, 
                        full.names = TRUE,
-                       negate = NULL
+                       negate = NULL,
+                       return.paths = FALSE
                        ){
 
   #path to questionnaire
@@ -23,6 +24,8 @@ filefinder <- function(aspect,
       paths <- glue("{path_part1}{path_part2}")
       }
 
+  if(return.paths) return(paths)
+    
   #collecting file names
   files <- list.files(paths, full.names = full.names)
   
