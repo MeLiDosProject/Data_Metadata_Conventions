@@ -10,7 +10,7 @@ coltype_checker <- function(codebook, data) {
     pull(`Variable / Field Name`) |>
     unique()
   
-  should_numeric <-
+  should_logical <-
     codebook |>
     filter(
         `Field Type` %in% c("yesno")
@@ -18,7 +18,7 @@ coltype_checker <- function(codebook, data) {
     pull(`Variable / Field Name`) |>
     unique()
   
-  should_logical <- 
+  should_numeric <- 
     codebook |>
     filter(
       `Text Validation Type OR Show Slider Number` %in% c("number", "integer") |
