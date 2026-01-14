@@ -9,7 +9,7 @@ prepare_codebook <- function(codebook, form.filter = NULL) {
     "<div class=\"rich-text-field-label\">|<p>|<br />|<em>|</em>|</p>|</div>|<span style=\"font-weight: normal;\">We need this so that we can contact you with further details about participation in the study. Please provide an e-mail address that you regularly check.</span>"
   codebook <- 
     read_csv(
-      path
+      path, show_col_types = FALSE
     )
   
   if(!is.null(form.filter)){
