@@ -1,39 +1,59 @@
 country_colors <- c(
-  Sweden     = "#88CCEE",  # Sky blue
-  Spain      = "#CC6677",  # Coral red
-  Germany    = "#DDCC77",  # Mustard yellow
-  Netherlands= "#117733",  # Dark green
-  Turkey     = "#332288",  # Indigo
-  Ghana      = "#AA4499",  # Purple-pink
-  Costa_Rica = "#44AA99"   # Teal
+  RISE     = "#88CCEE",  # Sky blue
+  FUSPCEU      = "#CC6677",  # Coral red
+  BAUA    = "#DDCC77",  # Mustard yellow
+  TUM    = "#DDCC77",  # Mustard yellow
+  MPI    = "#DDCC77",  # Mustard yellow
+  THUAS= "#117733",  # Dark green
+  IZTECH     = "#332288",  # Indigo
+  KNUST      = "#AA4499",  # Purple-pink
+  UCR = "#44AA99"   # Teal
 )
 
 tzs <- c(
-  Sweden     = "",
-  Spain      = "Europe/Madrid",
-  Germany    = "Europe/Berlin",
-  Netherlands= "Europe/Amsterdam",
-  Turkey     = "Europe/Istanbul",
-  Ghana      = "Africa/Accra",
-  Costa_Rica = ""
+  RISE     = "Europe/Stockholm",
+  FUSPCEU      = "Europe/Madrid",
+  BAUA    = "Europe/Berlin",
+  TUM    = "Europe/Berlin",
+  MPI    = "Europe/Berlin",
+  THUAS = "Europe/Amsterdam",
+  IZTECH     = "Europe/Istanbul",
+  KNUST      = "Africa/Accra",
+  UCR = "America/Costa_Rica"
+)
+
+countries <- c(
+  RISE     = "Sweden",
+  FUSPCEU      = "Spain",
+  BAUA    = "Germany",
+  TUM    = "Germany",
+  MPI    = "Germany",
+  THUAS = "The Netherlands",
+  IZTECH     = "Turkey",
+  KNUST      = "Ghana",
+  UCR = "Costa Rica"
 )
 
 cities <- c(
-  Sweden     = "",
-  Spain      = "Europe/Madrid",
-  Germany    = "Europe/Berlin",
-  Netherlands= "Europe/Amsterdam",
-  Turkey     = "Europe/Istanbul",
-  Ghana      = "Africa/Accra",
-  Costa_Rica = ""
+  RISE     = "Stockholm",
+  FUSPCEU      = "Madrid",
+  BAUA    = "Dortmund",
+  TUM    = "Munich",
+  MPI    = "Tübingen",
+  THUAS = "Delft",
+  IZTECH     = "Izmir",
+  KNUST      = "Kumasi",
+  UCR = "San Pedro, San José"
 )
 
 coordinates <- list(
-  Sweden     = "",
-  Spain      = "",
-  Germany    = "",
-  Netherlands= "",
-  Turkey     = c(38.32, 26.63),
-  Ghana      = "",
-  Costa_Rica = ""
+  RISE     = c(59.33, 18.06),
+  FUSPCEU      = c(40.4165, -3.70256),
+  BAUA    = c(51.498204, 7.416708),
+  TUM    = c(48.1333, 11.5667),
+  MPI    = c(48.5216, 9.0576),
+  THUAS = c(52.0116, 4.3571),
+  IZTECH     = c(38.32, 26.63),
+  KNUST      = c(6.6750074282377385, -1.572643823555129),
+  UCR = c(9.9372, -84.0509)
 )
