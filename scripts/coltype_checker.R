@@ -13,6 +13,14 @@ coltype_checker <- function(codebook, data) {
   should_numeric <-
     codebook |>
     filter(
+        `Field Type` %in% c("yesno")
+    ) |>
+    pull(`Variable / Field Name`) |>
+    unique()
+  
+  should_logical <- 
+    codebook |>
+    filter(
       `Text Validation Type OR Show Slider Number` %in% c("number", "integer") |
         `Field Type` %in% c("radio", "dropdown")
     ) |>
@@ -29,13 +37,14 @@ coltype_checker <- function(codebook, data) {
   should_character <-
     setdiff(
       unique(codebook |> pull(`Variable / Field Name`)),
-      c(should_numeric, should_POSIXct, should_date, "startdate", "enddate")
+      c(should_numeric, should_POSIXct, should_logical, should_date, "startdate", "enddate")
     )
   
   expected_map <- tibble::tribble(
     ~col, ~expected,
     !!!c(rbind(should_POSIXct,  rep("POSIXct",    length(should_POSIXct))),
          rbind(should_numeric,  rep("numeric",    length(should_numeric))),
+         rbind(should_logical,  rep("logical",    length(should_logical))),
          rbind(should_date,     rep("Date",       length(should_date))),
          rbind(should_character,rep("character",  length(should_character))))
   ) |>
@@ -69,6 +78,7 @@ coltype_checker <- function(codebook, data) {
       expected,
       "POSIXct"   = inherits(x, "POSIXct"),
       "numeric"   = is.numeric(x),
+      "logical"   = is.logical(x),
       "Date"      = inherits(x, "Date"),
       "character" = is.character(x),
       FALSE
@@ -100,6 +110,7 @@ coltype_checker <- function(codebook, data) {
       expected_example = dplyr::case_when(
         expected == "POSIXct"   ~ "as.POSIXct(..., tz = 'UTC')",
         expected == "numeric"   ~ "as.numeric(...)",
+        expected == "logical"   ~ "as.logical(...)",
         expected == "Date"      ~ "as.Date(...)",
         expected == "character" ~ "as.character(...)",
         TRUE ~ NA_character_
