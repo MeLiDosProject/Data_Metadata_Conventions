@@ -19,10 +19,9 @@ table_demographics <- function(data){
     tbl_summary(include = -c(comments, record_id),
                 statistic = list(all_continuous() ~ "{median} ({p25}, {p75})", 
                                  all_categorical() ~ "{n} ({p}%)"
-                ),
+                ), type = age ~ "continuous",
                 missing_text = "missing") |> 
     add_n() |> 
     bold_labels() |> 
-    modify_header(label = "**Demographics**") |> 
-    modify_footnote_header("Nighttime variables center on midnight, daytime variables on noon; median for time is based on circular time", columns = stat_0, replace = FALSE)
-}
+    modify_header(label = "**Demographics**")
+  }
