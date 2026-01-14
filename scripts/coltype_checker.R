@@ -13,7 +13,7 @@ coltype_checker <- function(codebook, data) {
   should_numeric <-
     codebook |>
     filter(
-      `Text Validation Type OR Show Slider Number` == "number" |
+      `Text Validation Type OR Show Slider Number` %in% c("number", "integer") |
         `Field Type` %in% c("radio", "dropdown")
     ) |>
     pull(`Variable / Field Name`) |>
