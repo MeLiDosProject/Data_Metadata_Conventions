@@ -1,4 +1,4 @@
-table_sleepdiary <- function(data, leave_out = NA){
+table_sleepdiary <- function(data){
   data |> 
     tbl_summary(include = -c(comments, record_id),
                 statistic = list(all_continuous() ~ "{median} ({p25}, {p75})", 
@@ -11,5 +11,18 @@ table_sleepdiary <- function(data, leave_out = NA){
     add_n() |> 
     bold_labels() |> 
     modify_header(label = "**Morning sleep diary**") |> 
+    modify_footnote_header("Nighttime variables center on midnight, daytime variables on noon; median for time is based on circular time", columns = stat_0, replace = FALSE)
+}
+
+table_demographics <- function(data){
+  data |> 
+    tbl_summary(include = -c(comments, record_id),
+                statistic = list(all_continuous() ~ "{median} ({p25}, {p75})", 
+                                 all_categorical() ~ "{n} ({p}%)"
+                ),
+                missing_text = "missing") |> 
+    add_n() |> 
+    bold_labels() |> 
+    modify_header(label = "**Demographics**") |> 
     modify_footnote_header("Nighttime variables center on midnight, daytime variables on noon; median for time is based on circular time", columns = stat_0, replace = FALSE)
 }
