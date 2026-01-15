@@ -15,7 +15,7 @@ prepare_codebook <- function(codebook, form.filter = NULL) {
   if(!is.null(form.filter)){
     #filter relevant columns
     codebook <- 
-      codebook |> filter(`Form Name` == form.filter)
+      codebook |> filter(`Form Name` %in% form.filter)
   }
   
   #clean up labels
