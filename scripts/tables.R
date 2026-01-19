@@ -24,4 +24,17 @@ table_demographics <- function(data){
     add_n() |> 
     bold_labels() |> 
     modify_header(label = "**Demographics**")
-  }
+}
+
+table_chronotype <- function(data){
+  data |> 
+    tbl_summary(include = -c(record_id),
+                statistic = list(all_continuous() ~ "{median} ({p25}, {p75})", 
+                                 all_categorical() ~ "{n} ({p}%)",
+                                 c(so_w, so_f, msw, msf, msf_sc)  ~ "{time_median} ({nighttime_p25}, {nighttime_p75})"
+                ),
+                type = sjl ~ "continuous",
+                missing_text = "missing") |> 
+    add_n() |> 
+    bold_labels() |> 
+    modify_header(label = "**Chronotype**")  }
