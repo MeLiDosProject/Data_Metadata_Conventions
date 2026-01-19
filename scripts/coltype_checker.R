@@ -34,10 +34,18 @@ coltype_checker <- function(codebook, data) {
     unique() |>
     setdiff(c("startdate", "enddate"))
   
+  should_time <-
+    codebook |>
+    filter(
+    `Text Validation Type OR Show Slider Number` %in% c("time")) |> 
+    pull(`Variable / Field Name`) |>
+    unique()
+  
   should_character <-
     setdiff(
       unique(codebook |> pull(`Variable / Field Name`)),
-      c(should_numeric, should_POSIXct, should_logical, should_date, "startdate", "enddate")
+      c(should_numeric, should_POSIXct, should_logical, 
+        should_date, should_time, "startdate", "enddate")
     )
   
   expected_map <- tibble::tribble(
@@ -46,6 +54,7 @@ coltype_checker <- function(codebook, data) {
          rbind(should_numeric,  rep("numeric",    length(should_numeric))),
          rbind(should_logical,  rep("logical",    length(should_logical))),
          rbind(should_date,     rep("Date",       length(should_date))),
+         rbind(should_time,     rep("time",       length(should_time))),
          rbind(should_character,rep("character",  length(should_character))))
   ) |>
     # The rbind trick can create a matrix; coerce cleanly:
@@ -80,6 +89,7 @@ coltype_checker <- function(codebook, data) {
       "numeric"   = is.numeric(x),
       "logical"   = is.logical(x),
       "Date"      = inherits(x, "Date"),
+      "time"      = inherits(x, "hms"),
       "character" = is.character(x),
       FALSE
     )
@@ -112,6 +122,7 @@ coltype_checker <- function(codebook, data) {
         expected == "numeric"   ~ "as.numeric(...)",
         expected == "logical"   ~ "as.logical(...)",
         expected == "Date"      ~ "as.Date(...)",
+        expected == "time"      ~ "as.hms(...)",
         expected == "character" ~ "as.character(...)",
         TRUE ~ NA_character_
       )
