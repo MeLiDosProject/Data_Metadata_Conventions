@@ -6,7 +6,7 @@ table_sleepdiary <- function(data){
                                  c(bedtime, sleep, sleepprep)  ~ "{time_median} ({nighttime_p25}, {nighttime_p75})",
                                  c(wake, out_ofbed)  ~ "{time_median} ({daytime_p25}, {daytime_p75})"
                 ),
-                type = awakenings ~ "continuous",
+                type = c(awakenings, awake_duration) ~ "continuous",
                 missing_text = "missing") |> 
     add_n() |> 
     bold_labels() |> 
