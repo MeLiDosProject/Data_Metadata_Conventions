@@ -239,8 +239,8 @@ grand_overview <- function(dataset, #light exposure dataset
         upper95 = quantile({{ variable }}, 0.975, na.rm = TRUE),
         upper75 = quantile({{ variable }}, 0.875, na.rm = TRUE),
         upper50 = quantile({{ variable }}, 0.75, na.rm = TRUE),
-        lower50 = quantile({{ variable }}, 0.125, na.rm = TRUE),
-        lower75 = quantile({{ variable }}, 0.25, na.rm = TRUE),
+        lower50 = quantile({{ variable }}, 0.25, na.rm = TRUE),
+        lower75 = quantile({{ variable }}, 0.125, na.rm = TRUE),
         lower95= quantile({{ variable }}, 0.025, na.rm = TRUE)
       ) |> 
       add_photoperiod(coordinates) |> 
