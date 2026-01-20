@@ -33,7 +33,7 @@ table_chronotype <- function(data){
                                  all_categorical() ~ "{n} ({p}%)",
                                  c(so_w, so_f, msw, msf, msf_sc)  ~ "{time_median} ({nighttime_p25}, {nighttime_p75})"
                 ),
-                type = c(sjl, outdoor, sd_w, sd_f, msw, msf, so_w, so_f, meq) ~ "continuous",
+                type = c(sjl, outdoor, sd_w, sd_f, msw, msf, so_w, so_f, meq, sd_week) ~ "continuous",
                 missing_text = "missing") |> 
     add_n() |> 
     bold_labels() |> 
