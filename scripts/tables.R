@@ -38,3 +38,18 @@ table_chronotype <- function(data){
     add_n() |> 
     bold_labels() |> 
     modify_header(label = "**Chronotype**")  }
+
+table_exercisediary <- function(data){
+  data |> 
+    tbl_summary(include = -c(record_id, type, type_english, startdate_3, enddate_3, Date),
+                statistic = list(all_continuous() ~ "{median} ({p25}, {p75})", 
+                                 all_categorical() ~ "{n} ({p}%)"
+                ),
+                type = list(
+                  c(commute, sedentary) ~ "continuous",
+                  c(light_glasses) ~ "dichotomous"
+                ),
+                missing_text = "missing") |> 
+    add_n() |> 
+    bold_labels() |> 
+    modify_header(label = "**Evening exercise diary**")  }
