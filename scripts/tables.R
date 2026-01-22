@@ -41,7 +41,7 @@ table_chronotype <- function(data){
 
 table_exercisediary <- function(data){
   data |> 
-    tbl_summary(include = -c(record_id, type, type_english, startdate_3, enddate_3, Date),
+    tbl_summary(include = -c(record_id, type, type_english, startdate_3, enddate_3, Date, instructions),
                 statistic = list(all_continuous() ~ "{median} ({p25}, {p75})", 
                                  all_categorical() ~ "{n} ({p}%)"
                 ),
