@@ -56,7 +56,7 @@ table_exercisediary <- function(data){
 
 table_wearlog <- function(data){
   data |> 
-    tbl_summary(include = -c(start, end, record_id, wearlog_event, wearlog_place, wearlog_place_english), 
+    tbl_summary(include = -c(start, end, record_id, wearlog_event, wearlog_place, wearlog_place_english, radius), 
                 statistic = list(all_continuous() ~ "{median} ({p25}, {p75})", 
                                  all_categorical() ~ "{n} ({p}%)"
                 ),
