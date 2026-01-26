@@ -25,7 +25,7 @@ wearlog_plausibility <- function(data) {
                event == "on" & lag(event) %in% c("off", "sleep") & lag(start) < (start + ddays(1)) ~ TRUE,
                event == "site_leave" & lead(event) == "site_return" ~ TRUE,
                event == "site_return" & lag(event) == "site_leave" ~ TRUE,
-               # .default = FALSE
+               .default = FALSE
              )
     )
 }
