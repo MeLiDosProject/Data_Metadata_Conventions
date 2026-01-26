@@ -53,3 +53,15 @@ table_exercisediary <- function(data){
     add_n() |> 
     bold_labels() |> 
     modify_header(label = "**Evening exercise diary**")  }
+
+table_wearlog <- function(data){
+  data |> 
+    tbl_summary(include = -c(start, end, record_id, wearlog_event, wearlog_place), 
+                statistic = list(all_continuous() ~ "{median} ({p25}, {p75})", 
+                                 all_categorical() ~ "{n} ({p}%)"
+                ),
+                missing_text = "missing") |> 
+    add_n() |> 
+    bold_labels() |> 
+    modify_header(label = "**Wearlog**")
+}
