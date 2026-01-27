@@ -83,3 +83,15 @@ table_leba <- function(data){
     gt::tab_footnote("Items are coded as follows. 1: Never | 2: Rarely | 3: Sometimes | 4: Often | 5: Always. Factors ('F') are numerical summations")
 }
 
+
+table_health <- function(data){
+  data |> 
+    tbl_summary(include = -c(record_id, medication_type),
+                statistic = list(all_continuous() ~ "{median} ({p25}, {p75})", 
+                                 all_categorical() ~ "{n} ({p}%)"
+                ),
+                missing_text = "missing") |> 
+    add_n() |> 
+    bold_labels() |> 
+    modify_header(label = "**Lifestyle and health**")
+}
