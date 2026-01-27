@@ -6,7 +6,7 @@ prepare_codebook <- function(codebook, form.filter = NULL) {
     codebook
   )
   strings_to_ignore <- 
-    "<div class=\"rich-text-field-label\">|<span style=""font-weight: normal;"">Note: this does not include the time spent filling in the questionnaires.|<span style=""font-weight: normal;"">Note: this does not include the time spent filling in the questionnaires.|<span style=\"text-decoration: underline;\">|</span>|<p>|<br />|<em>|</em>|</p>|</div>|<span style=\"font-weight: normal;\">We need this so that we can contact you with further details about participation in the study. Please provide an e-mail address that you regularly check.</span>"
+    "<div class=\"rich-text-field-label\">|<span style=\"font-weight: normal;\">|<span style=\"font-weight: normal;\">|<span style=\"text-decoration: underline;\">|</span>|<p>|<br />|<em>|</em>|</p>|</div>|<span style=\"font-weight: normal;\">We need this so that we can contact you with further details about participation in the study. Please provide an e-mail address that you regularly check.</span>"
   codebook <- 
     read_csv(
       path, show_col_types = FALSE
