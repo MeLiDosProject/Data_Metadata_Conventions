@@ -65,3 +65,21 @@ table_wearlog <- function(data){
     bold_labels() |> 
     modify_header(label = "**Wearlog**")
 }
+
+table_leba <- function(data){
+  data |> 
+    mutate(across(c(any_of(relevant_columns), -record_id), as.numeric)) |> 
+    add_col_labels(codebook, var_col = `Variable / Field Name`, label_col = `Field Label`) |> 
+    tbl_summary(include = -record_id, 
+                statistic = list(all_continuous() ~ "{median} ({p25}, {p75})", 
+                                 all_categorical() ~ "{n} ({p}%)"
+                ),
+                type = everything() ~ "continuous",
+                missing_text = "missing") |> 
+    add_n() |> 
+    bold_labels() |> 
+    modify_header(label = "**Light exposure behaviour (LEBA)**") |> 
+    as_gt() |> 
+    gt::tab_footnote("Items are coded as follows. 1: Never | 2: Rarely | 3: Sometimes | 4: Often | 5: Always. Factors ('F') are numerical summations")
+}
+
