@@ -97,13 +97,19 @@ table_health <- function(data){
 }
 
 table_currentconditions <- function(data){
+  data <- 
+    data |> 
+    mutate(across(anxious:kss, as.numeric)) |> 
+    add_col_labels(codebook, var_col = `Variable / Field Name`, label_col = `Field Label`)
   data |> 
     tbl_summary(include = -c(record_id, Datetime, enddate_4),
                 statistic = list(all_continuous() ~ "{median} ({p25}, {p75})", 
                                  all_categorical() ~ "{n} ({p}%)"
                 ),
+                type = anxious:kss ~ "continuous",
                 missing_text = "missing") |> 
     add_n() |> 
     bold_labels() |> 
     modify_header(label = "**Lifestyle and health**")
 }
+
