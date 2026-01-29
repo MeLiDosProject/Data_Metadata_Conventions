@@ -95,3 +95,15 @@ table_health <- function(data){
     bold_labels() |> 
     modify_header(label = "**Lifestyle and health**")
 }
+
+table_currentconditions <- function(data){
+  data |> 
+    tbl_summary(include = -c(record_id, Datetime, enddate_4),
+                statistic = list(all_continuous() ~ "{median} ({p25}, {p75})", 
+                                 all_categorical() ~ "{n} ({p}%)"
+                ),
+                missing_text = "missing") |> 
+    add_n() |> 
+    bold_labels() |> 
+    modify_header(label = "**Lifestyle and health**")
+}
