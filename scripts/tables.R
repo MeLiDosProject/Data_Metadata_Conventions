@@ -114,8 +114,6 @@ table_currentconditions <- function(data){
 }
 
 table_general <- function(data, header = NULL){
-  data <- 
-    data |> 
   data |> 
     tbl_summary(include = -c(record_id),
                 statistic = list(all_continuous() ~ "{median} ({p25}, {p75})", 
