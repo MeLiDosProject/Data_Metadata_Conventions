@@ -3,7 +3,7 @@ attention_check <-
     data <-
       data |> 
       mutate({{ check.column }} := 
-               ({{ check.column }} == condition) |> 
+               ({{ check.column }} %in% condition) |> 
                add_label(label)
       ) |> 
       relocate({{ check.column }}, .after = last_col())
