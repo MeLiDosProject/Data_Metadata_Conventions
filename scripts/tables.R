@@ -113,3 +113,17 @@ table_currentconditions <- function(data){
     modify_header(label = "**Lifestyle and health**")
 }
 
+table_general <- function(data, header = NULL){
+  data <- 
+    data |> 
+  data |> 
+    tbl_summary(include = -c(record_id),
+                statistic = list(all_continuous() ~ "{median} ({p25}, {p75})", 
+                                 all_categorical() ~ "{n} ({p}%)"
+                ),
+                missing_text = "missing") |> 
+    add_n() |> 
+    bold_labels() |> 
+    modify_header(label = glue::glue("**{header}**"))
+}
+
