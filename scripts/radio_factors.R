@@ -38,7 +38,7 @@ add_radio_factors <- function(data,
                               var_col = var,
                               type_col = type,
                               levels_col = levels,
-                              radio_value = "radio",
+                              radio_value = c("checkbox", "radio"),
                               warn = TRUE) {
   var_col <- enquo(var_col)
   type_col <- enquo(type_col)
@@ -51,7 +51,7 @@ add_radio_factors <- function(data,
       .type = as.character(!!type_col),
       .levels = as.character(!!levels_col)
     ) %>%
-    filter(!is.na(.var), .var != "", .type == radio_value) %>%
+    filter(!is.na(.var), .var != "", .type %in% radio_value) %>%
     distinct(.var, .keep_all = TRUE)
   
   levels_map <- stats::setNames(
