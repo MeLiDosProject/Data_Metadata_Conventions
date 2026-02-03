@@ -137,4 +137,8 @@ table_wellbeingdiary <- function(data){
                 missing_text = "missing") |> 
     add_n() |> 
     bold_labels() |> 
-    modify_header(label = "**Wellbeing diary (WHO-5)**")  }
+    modify_header(label = "**Wellbeing diary (WHO-5)**") |> 
+    as_gt() |> 
+    gt::tab_footnote("Items 4 deviates from the WHO-5 questionnaire. Towards the score it is coded as follows. 1: Very poor | 2: Poor | 3: Fair | 4: Good | 5: Very good.")
+  
+    }
