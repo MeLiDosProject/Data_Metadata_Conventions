@@ -125,3 +125,16 @@ table_general <- function(data, header = NULL){
     modify_header(label = glue::glue("**{header}**"))
 }
 
+table_wellbeingdiary <- function(data){
+  data |> 
+    tbl_summary(include = -c(record_id, Date, startdate_2, who5_raw),
+                statistic = list(all_continuous() ~ "{median} ({p25}, {p75})", 
+                                 all_categorical() ~ "{n} ({p}%)"
+                ),
+                type = list(
+                  c(who5_percentage) ~ "continuous",
+                ),
+                missing_text = "missing") |> 
+    add_n() |> 
+    bold_labels() |> 
+    modify_header(label = "**Wellbeing diary (WHO-5)**")  }
