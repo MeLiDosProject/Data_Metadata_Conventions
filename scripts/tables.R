@@ -132,7 +132,7 @@ table_wellbeingdiary <- function(data){
                                  all_categorical() ~ "{n} ({p}%)"
                 ),
                 type = list(
-                  c(who5_percentage) ~ "continuous",
+                  c(who5_percentage) ~ "continuous"
                 ),
                 missing_text = "missing") |> 
     add_n() |> 
