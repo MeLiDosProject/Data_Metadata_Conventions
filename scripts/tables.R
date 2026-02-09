@@ -110,7 +110,7 @@ table_currentconditions <- function(data){
                 missing_text = "missing") |> 
     add_n() |> 
     bold_labels() |> 
-    modify_header(label = "**Lifestyle and health**")
+    modify_header(label = "**Current conditions (EMA)**")
 }
 
 table_general <- function(data, header = NULL){
