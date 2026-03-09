@@ -35,7 +35,7 @@ countries <- c(
 )
 
 cities <- c(
-  RISE     = "Stockholm",
+  RISE     = "Borås",
   FUSPCEU      = "Madrid",
   BAUA    = "Dortmund",
   TUM    = "Munich",
@@ -47,7 +47,7 @@ cities <- c(
 )
 
 coordinates <- list(
-  RISE     = c(59.33, 18.06),
+  RISE     = c(57.7214, 12.9404),
   FUSPCEU      = c(40.4165, -3.70256),
   BAUA    = c(51.498204, 7.416708),
   TUM    = c(48.1333, 11.5667),
